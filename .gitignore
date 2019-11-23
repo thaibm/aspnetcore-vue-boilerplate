@@ -8,3 +8,6 @@ aspnet-core/src/ASPNetCoreVue.Web.Host/App_Data/Logs/
 aspnet-core/src/ASPNetCoreVue.Web.Mvc/App_Data/Logs/
 aspnet-core/src/ASPNetCoreVue.Migrator/Logs/Logs.txt
 aspnet-core/src/ASPNetCoreVue.Web.Host/appsettings.json
+
+node_modules/
+vue-app/node_modules/
