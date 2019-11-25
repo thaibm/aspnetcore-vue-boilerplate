@@ -1,14 +1,15 @@
 import './registerServiceWorker';
+import '@/styles/themes/index.css';
 import './styles/main.scss';
 
-import BootstrapVue from 'bootstrap-vue';
 import Vue from 'vue';
 
 import App from './App.vue';
 import router from './router';
 import store from './store';
+import Element from 'element-ui';
 
-Vue.use(BootstrapVue)
+Vue.use(Element)
 Vue.config.productionTip = false
 
 new Vue({

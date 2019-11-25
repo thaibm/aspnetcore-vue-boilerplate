@@ -1,13 +1,17 @@
 <template>
     <div id="app">
-        <b-navbar type="light" variant="light" v-if="isAuthenticated">
-            <b-navbar-nav>
-                <b-nav-item to="/">Home</b-nav-item>
-                <b-nav-item to="/about">About</b-nav-item>
-                <b-nav-item @click="logout" v-if="isAuthenticated">Logout</b-nav-item>
-                <b-nav-item to="/login" v-else>Login</b-nav-item>
-            </b-navbar-nav>
-        </b-navbar>
+        <el-menu
+            :default-active="activeIndex"
+            class="el-navbar"
+            mode="horizontal"
+            v-if="isAuthenticated"
+            :router="true"
+        >
+            <el-menu-item index="1" :route="{name:'home'}">Home</el-menu-item>
+            <el-menu-item index="2" :route="{name:'about'}">About</el-menu-item>
+            <el-menu-item index="3" @click="logout" v-if="isAuthenticated">Logout</el-menu-item>
+            <el-menu-item index="3" v-else :route="{name:'login'}">Login</el-menu-item>
+        </el-menu>
         <router-view />
     </div>
 </template>
@@ -19,6 +23,8 @@ import { Action, Getter } from 'vuex-class'
     name: 'App'
 })
 export default class App extends Vue {
+    public activeIndex: string = '1';
+
     @Getter('isAuthenticated', { namespace: 'AppModule' })
     public isAuthenticated!: boolean;
 
@@ -28,10 +34,9 @@ export default class App extends Vue {
     public mounted() {
     }
 
-    public logout() {
-        this.actionLogout().then(() => {
-            this.$router.push("/login");
-        });
+    public async logout() {
+        const result = await this.actionLogout();
+        this.$router.push("/login");
     }
 }
 </script>
