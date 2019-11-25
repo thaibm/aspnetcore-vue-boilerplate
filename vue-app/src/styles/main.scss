@@ -1,0 +1,12 @@
+// Import Custom Variables (Overrides Default Bootstrap Variables)
+@import "utils/variables.scss";
+@import "utils/mixins.scss";
+
+// Import Bootstrap
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "../../node_modules/bootstrap-vue/src/index.scss";
+
+// Global
+@import "global.scss";
+
+@import "./layout/navigation";

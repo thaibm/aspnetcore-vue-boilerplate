@@ -1,0 +1,13 @@
+@each $breakpoint, $value in $grid-breakpoints {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+    .min-width#{$infix} {
+        min-width: $value;
+    }
+}
+
+@each $size, $length in $spacers {
+    .mh-em-#{$size + 1} {
+        max-height: #{($size + 1) * $line-height-base}em;
+    }
+}
