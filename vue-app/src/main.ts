@@ -1,13 +1,13 @@
-import './registerServiceWorker';
-import '@/styles/themes/index.css';
-import './styles/main.scss';
+import './registerServiceWorker'
+import './styles/main.scss'
+import '@/styles/themes/index.css'
 
-import Vue from 'vue';
+import Element from 'element-ui'
+import Vue from 'vue'
 
-import App from './App.vue';
-import router from './router';
-import store from './store';
-import Element from 'element-ui';
+import App from './App.vue'
+import router from './router'
+import store from './store'
 
 Vue.use(Element)
 Vue.config.productionTip = false

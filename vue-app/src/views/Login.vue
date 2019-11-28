@@ -15,6 +15,7 @@
                 <el-input
                     v-model="formLogin.usernameOrEmailAddress"
                     placeholder="Enter your Username Or EmailAddress"
+                    required
                 ></el-input>
             </el-form-item>
             <el-form-item>
@@ -22,8 +23,10 @@
                     type="password"
                     v-model="formLogin.password"
                     placeholder="Enter your Password"
+                    required
                 ></el-input>
             </el-form-item>
+            <p>Don't have an account? <a href="/register">Register</a></p>
             <el-button type="primary" native-type="submit" class="btn-block">Login</el-button>
             <p class="mt-5 mb-3 text-muted text-center">© 2017-2019</p>
         </el-form>
