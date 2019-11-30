@@ -17,14 +17,23 @@ const getCurrentLoginInformations = (): Promise<any> => {
 	const param = {}
 	return request({
 		method: 'GET',
-		url: `/api/services/app/Session/GetCurrentLoginInformations`,
+		url: `/api/services/app/Session/GetCurrentLoginInformations/`,
 		data: param
 	})
 }
 
+const register = (data: any): Promise<any> => {
+	return request({
+		method: 'POST',
+		url: `/api/services/app/Account/Register`,
+		data
+	})
+}
+
 const APP_SERVICES = {
-	login: login,
-	getCurrentLoginInformations: getCurrentLoginInformations
+	login,
+	getCurrentLoginInformations,
+	register
 }
 
 Object.freeze(APP_SERVICES)

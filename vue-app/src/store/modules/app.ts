@@ -69,6 +69,10 @@ const actions: ActionTree<AppState, RootState> = {
 		const userDetails = response.result.user
 		commit('SET_USER_DETAILS', userDetails)
 		return response
+	},
+	async register({commit}, data): Promise<any> {
+		const response = await APP_SERVICES.register(data)
+		return response
 	}
 }
 

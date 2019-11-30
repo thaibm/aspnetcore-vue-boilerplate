@@ -15,3 +15,11 @@ export enum UserRole {
 	Admin,
 	User
 }
+
+export interface RegisterAccount {
+	name: string,
+	surname: string,
+	emailAddress: string,
+	userName: string,
+	password: string
+}
